@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Visų elementų selektorius */
+        * {
+            box-sizing: border-box;
+        }
+
+        .deze {
+            width: 850px;
+            /* height: 880px; */
+            padding: 10px;
+            background-color: #9b8878;
+            margin: 20px auto;
+            display: flex;
+            /* justify-content: center; */
+            flex-wrap: wrap;
+            gap: 10px;
+            border-radius: 15px;
+            align-items: center;
+        }
+
+        .dezute {
+            width: 200px;
+            height: 200px;
+            border-radius: 15px;
+            text-align: center;
+            font-family: "Rubik", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bendra {
+            background-color: #bcab96;
+        }
+
+        .spalva2 {
+            background-color: #ede3d9;
+            color: #756452;
+        }
+
+        .spalva4 {
+            background-color: #ead7b5;
+            color: #756452;
+        }
+
+        .spalva8 {
+            background-color: #f0ad72;
+            color: white;
+        }
+
+        .spalva16 {
+            background-color: #f59362;
+            color: white;
+        }
+
+        .spalva32 {
+            background-color: #f67f63;
+            color: white;
+        }
+
+        .spalva64 {
+            background-color: #f66443;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="deze">
+        <div class="dezute bendra"></div>
+        <div class="dezute bendra"></div>
+        <div class="dezute bendra"></div>
+        <div class="dezute spalva2">2</div>
+        <div class="dezute bendra"></div>
+        <div class="dezute spalva2">2</div>
+        <div class="dezute spalva8">8</div>
+        <div class="dezute spalva16">16</div>
+        <div class="dezute spalva8">8</div>
+        <div class="dezute bendra"></div>
+        <div class="dezute spalva16">16</div>
+        <div class="dezute spalva64">64</div>
+        <div class="dezute spalva4">4</div>
+        <div class="dezute spalva16">16</div>
+        <div class="dezute spalva32">32</div>
+        <div class="dezute spalva8">8</div>
+
+
+    </div>
+
+
+
+</body>
+
+</html>
