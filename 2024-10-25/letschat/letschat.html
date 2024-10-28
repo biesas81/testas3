@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lets chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .conteiner {
+            width: 600px;
+            height: 400px;
+            display: flex;
+            background-color: blue;
+            margin: 20px auto;
+        }
+
+        body {
+            background-color: #be8cef;
+            font-family: "Ubuntu", serif;
+        }
+
+        .conteiner2 {
+            min-width: 50%;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .tekstas {
+            background-color: #00b4cf;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .forma {
+            background-color: white;
+            padding: 40px;
+            margin: 0 auto;
+            ;
+            height: 100%;
+            background-color: #f8f8f8;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 10px;
+        }
+
+        p {
+            width: 100%;
+            margin: 0;
+            font-size: 10px;
+        }
+
+        h2 {
+            width: 100%;
+            margin: 0;
+            font-weight: 900;
+        }
+
+        input {
+            width: 100%;
+            height: 30px;
+            background-color:#eeeeee ;
+            border: none;
+        }
+
+        .laukelis {
+            width: 100%;
+        }
+
+        textarea {
+            display: block;
+            width: 100%;
+            height: 50px;
+            resize: none;
+            background-color:#eeeeee ;
+            border: none;
+        }
+
+        .tekst {
+            font-size: 12px;
+        }
+        button {
+            width: 50%;
+            height: 30px;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conteiner">
+        <div class="conteiner2 tekstas">
+            <H2>Let's Chat</H2>
+
+            <div class="tekst">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni recusandae quaerat, in corrupti
+                perferendis nemo ex soluta inventore aut velit dolorum numquam repellat repudiandae dolores minima
+                ratione consequuntur dicta iste.
+            </div>
+        </div>
+
+        <div class="conteiner2">
+            <div class="forma">
+                <h2 style="text-align: center;">Contact</h2>
+                <p>*Required</p>
+                <div class="laukelis">
+                    <input type="text" placeholder="Name*" required>
+                </div>
+                <div class="laukelis">
+                    <input type="email" placeholder="Email*" required>
+                </div>
+                <div class="laukelis">
+                    <input type="text" placeholder="Company">
+                </div>
+                <div class="laukelis">
+                    <input type="text" placeholder="Phone">
+                </div>
+                <textarea name="" id="" placeholder="Message"></textarea>
+                <button>SUBMIT</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
