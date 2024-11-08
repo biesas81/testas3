@@ -1,0 +1,389 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    font-family: "Nunito Sans", sans-serif;
+    color: white;
+
+}
+
+.container {
+
+    max-width: 1248px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+
+
+
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.head a {
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+
+}
+
+a:hover {
+    color: #5454D4;
+}
+
+section .container {
+
+    min-height: 100vh;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.contactus {
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: black;
+    border-color: white;
+    width: 157px;
+    padding: 12px;
+    font-size: 16px;
+}
+
+header {
+    padding: 40px 0;
+}
+
+header nav ul {
+    gap: 40px;
+}
+
+footer nav ul {
+    gap: 40px;
+}
+
+.teises {
+    color: white;
+    font-size: 16px;
+}
+
+.half {
+    width: 50%;
+}
+
+p {
+    color: white;
+    font-size: 21px;
+    line-height: 39px;
+}
+
+.video {
+    max-width: 588px;
+    margin: 50px 0px;
+
+}
+
+.play1 {
+    position: relative;
+}
+
+.play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button {
+    background-color: #5454D4;
+    border-radius: 4px;
+    font-size: 20px;
+    padding: 16px 32px;
+    color: white;
+    display: block;
+    width: fit-content;
+    transition: all .1s ease-in;
+}
+
+.button:hover {
+    background-color: white;
+    color: #5454D4;
+}
+
+.card {
+    width: 32.2%;
+    background-color: #19191B;
+    padding: 20px 43px;
+    text-align: center;
+}
+
+.card p {
+    font-size: 20px;
+    line-height: 28px;
+
+}
+
+.card h3 {
+    font-size: 28px;
+    margin: 20px;
+}
+
+.produktai {
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin-bottom: 24px;
+}
+
+
+.portfolio {
+    max-width: 1200px;
+}
+
+.card1 {
+    width: 33.333333%;
+    padding: 24px 24px;
+
+}
+
+.porfolio img {
+    max-width: 336px;
+    width: 100%;
+}
+
+.laiptai1 {
+    margin-top: 0px;
+}
+
+.laiptai2 {
+    margin-top: 58px;
+}
+
+.laiptai3 {
+    margin-top: 116px;
+}
+
+.apatinis {
+    width: 201px;
+    height: 60px;
+    background-color: #5454D4;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border-radius: 4px;
+
+}
+
+
+.play1 img {
+    max-width: 100%;
+}
+
+.meniu {
+    display: none;
+
+}
+
+h1 {
+    font-size: 80px;
+    line-height: 84px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+
+h2 {
+    font-size: 60px;
+    line-height: 70px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+.ketvirtasekcija {
+    position: relative;
+}
+
+.ketvirtasekcija img {
+    position: absolute;
+}
+
+
+.penktasekcija {
+    position: relative;
+}
+
+.penktasekcija img {
+    position: absolute;
+}
+
+
+.pirmafoto {
+    background: url(Group\ 162534.png) no-repeat center;
+    background-size: contain;
+    min-height: 100vh;
+
+    position: relative;
+}
+
+.pirmafoto img {
+    position: absolute;
+}
+
+.top-right {
+    right: 0px;
+    top: 210px
+}
+
+.top-left {
+    top: 245px;
+    left: -40px;
+}
+
+.bottom-right {
+    bottom: 200px;
+    right: 0px;
+}
+
+.bottom-left {
+    bottom: 170px;
+    left: -90px;
+}
+
+.top-right-four {
+    right: 30px;
+    top: -500px
+}
+
+.bottom-left-four {
+    top: -10px;
+    left: -40px;
+}
+
+.top-right-five {
+    right: 30px;
+    top: 10px
+}
+
+.bottom-left-five {
+    top: 200px;
+    left: 40px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .half {
+        width: 100%;
+    }
+
+    .meniu {
+        display: flex;
+    }
+
+    .contactus {
+        display: none;
+    }
+
+    h1 {
+        font-size: 42px;
+        line-height: 150%;
+    }
+
+    h2 {
+        font-size: 36px;
+        line-height: 150%;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    .head {
+        display: none;
+    }
+
+    .porfolio div {
+        display: none;
+    }
+
+    .porfolio div:first-child {
+        display: block;
+    }
+
+    .produktai {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .card1 {
+        width: 100%;
+    }
+
+    .pirmasekcija {
+        flex-direction: column;
+    }
+
+    .antrasekcija {
+        flex-direction: column;
+    }
+
+    .mobile {
+        flex-direction: column;
+
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 150%;
+    }
+
+    .card p {
+        font-size: 16px;
+        line-height: 28px;
+
+    }
+
+    .play {
+        width: 40px;
+    }
+
+.logo img {
+    width: 115px;
+}
+
+footer nav ul {
+    gap: 80px;
+}
+
+}

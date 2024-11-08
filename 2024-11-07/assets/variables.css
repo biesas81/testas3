@@ -1,0 +1,82 @@
+html {
+    --primary-color: #035E89;
+    --background-color: white;
+    --container-gutter: 0px;
+    --text-primary-color: black;
+    --text-secondary-color: #6D6D6D;
+
+}
+
+
+
+.col {
+    width: 100%;
+}
+
+.col-1 {
+    width: 8.333333333333333%;
+}
+
+.col-2 {
+    width: 16.66666666666667%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.333333333333333%;
+}
+
+.col-5 {
+    width: 41.66666666666667%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.333333333333333%;
+}
+
+.col-8 {
+    width: 66.66666666666667%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.333333333333333%;
+}
+
+.col-11 {
+    width: 91.66666666666667%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
