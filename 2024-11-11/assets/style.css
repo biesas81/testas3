@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", serif;
+    background-color: var(--background1-color);
+
+}
+
+.container {
+    max-width: calc(1200px + var(--container-gutter) * 2);
+    padding-left: var(--container-gutter);
+    padding-right: var(--container-gutter);
+    margin: 0 auto;
+}
+
+section .container {
+    min-height: 100vh;
+}
+
+section:nth-child(even) {
+    background: var(--background2-color);
+  }
+
+
+header .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0px;
+    margin: 0px -39px;
+}
+
+header nav ul {
+    display: flex;
+    gap: 50px;
+
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-inner .meniu a {
+    text-decoration: none;
+    color: var(--text-meniu-color);
+    line-height: 24px;
+}
+
+.meniu-white {
+    color: var(--primary-color);
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 10px 20px;
+}
+
+.meniu-green {
+    color: var(--background2-color);
+    background-color: var(--primary-color);
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 10px 20px;
+}
+
+.header-inner .d-flex {
+    gap: 14px;
+}
+
+h1 {
+    color: var(--text-heading-color);
+    font-size: 64px;
+    line-height: 76px;
+    font-weight: 600;
+}
+
+p {
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+}
+
+section.intro p {
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
+.button {
+    color: var(--background2-color);
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 14px 32px;
+    text-decoration: none;
+}
+
+.intro {
+    margin-top: 96px;
+}
+
+section.intro .dots {
+    margin-top: 50px;
+}
+
+section.intro .dots ul {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+section.intro .dots li {
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    opacity: 30%;
+    border-radius: 50%;
+}
+
+section.intro .dots li.active {
+    opacity: 100%;
+}
+
+h3 {
+    font-size: 36px;
+    line-height: 44px;
+    color: var(--text-heading-color);
+    margin: 0;
+}
+
+h5 {
+    font-size: 28px;
+    line-height: 36px;
+    color: var(--text-heading-color);
+    margin: 0;
+}
+.card {
+    font-size: 14px;
+    line-height: 20px;
+}
+.clients {
+    padding-top: 40px;
+}
