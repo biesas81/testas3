@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>masyvai</title>
+</head>
+
+<body>
+
+    <script>
+        console.log('---------------1 UZDUOTIS------------------');
+
+        let augalai = ["agurkas", "pomidoras", "salota", "ridikas", "cukinija", "bulve", "krapas", "paprika", "pupa", "zirnis"];
+
+        console.log(augalai);
+        console.log('---------------2 UZDUOTIS------------------');
+
+        for (let i = 0; i < augalai.length; i++) {
+            console.log(augalai[i]);
+        }
+
+        console.log('---------------3 UZDUOTIS------------------');
+
+        for (let i = augalai.length; i !== 0; i--) {
+            console.log(augalai[i - 1]);
+        }
+        console.log('---------------4 UZDUOTIS------------------');
+
+        let y = 0;
+        let x = 0;
+        for (let i = 0; i < augalai.length; i++) {
+            if (augalai[i].length < 5) { x++ }
+            if (augalai[i].length > 7) { y++ }
+
+        }
+        console.log(`Trumpesni nei 5 simboliai yra ${x} žodžiai, ilgesni nei 7 simboliai yra  ${y} žodžiai.`);
+
+        console.log('---------------5 UZDUOTIS------------------');
+
+        x = 0;
+        for (let i = 0; i < augalai.length; i++) {
+            if (augalai[i].length > 5 && augalai[i].length < 10) { x++ }
+
+        }
+        console.log(`Ilgesni nei 5 simboliai ir trumpesni nei 10 simbolių yra ${x} žodžiai.`);
+
+        
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

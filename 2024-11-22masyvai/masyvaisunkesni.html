@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>masyvai sudetingesni</title>
+</head>
+
+<body>
+
+    <script>
+
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        const masyvas = [];
+        for (let i = 0; i < 30; i++) {
+            masyvas[i] = random(5, 25);
+        }
+        console.log(masyvas);
+
+        console.log('---------------1 UZDUOTIS------------------');
+        let y = 0;
+        for (let i = 0; i < masyvas.length; i++) {
+            if (masyvas[i] > 10) { y++ }
+        }
+        console.log(`didesni nei 10 yra ${y} skaičiai.`);
+
+        console.log('---------------2 UZDUOTIS------------------');
+
+        let max;
+        y = 0
+
+        for (let i = 0; i < masyvas.length; i++) {
+            if (y === 0) { max = masyvas[i]; y++; }
+            else if (masyvas[i] > max) { max = masyvas[i]; }
+        }
+        console.log(`Didžiausias skaičius masyve yra ${max}.`);
+        for (let i = 0; i < masyvas.length; i++) {
+            if (masyvas[i] === max) { console.log(`Didžiausio skaičiaus numeris masyve yra ${i}.`); }
+        }
+
+        console.log('---------------3 UZDUOTIS------------------');
+        let suma = 0;
+        for (let i = 0; i < masyvas.length; i++) {
+            if (i % 2 === 0) { suma += masyvas[i] }
+        }
+        console.log(`Lyginių indeksų reikšmių suma yra ${suma}.`);
+
+        console.log('---------------4 UZDUOTIS------------------');
+
+        for (let i = 0; i < masyvas.length; i++) {
+            masyvas[i] = masyvas[i] - i;
+        }
+        console.log(masyvas);
+
+        console.log('---------------5 UZDUOTIS------------------');
+
+        for (let i = 30; i < 40; i++) {
+            masyvas[i] = random(5, 25);
+        }
+        console.log(masyvas);
+
+        console.log('---------------6 UZDUOTIS------------------');
+        const masyvas1 = [];
+        const masyvas2 = [];
+        y = 0;
+        z = 0;
+        for (let i = 0; i < masyvas.length; i++) {
+            if (i % 2 === 0) {
+                masyvas1[y] = masyvas[i];
+                y++;
+            } else {
+                masyvas2[z] = masyvas[i];
+                z++;
+            }
+        }
+        console.log(masyvas1);
+        console.log(masyvas2);
+
+        console.log('---------------7 UZDUOTIS------------------');
+
+        for (let i = 0; i < masyvas.length; i++) {
+            if (i % 2 === 0 && masyvas[i] > 15) { masyvas[i] = 0 }
+        }
+        console.log(masyvas);
+
+        console.log('---------------8 UZDUOTIS------------------');
+
+        for (let i = 0; i < masyvas.length; i++) {
+            if (masyvas[i] > 10) {
+                { console.log(`Pirmas indeksas, kurio elemento reikšmė didesnė nei 10 yra ${i}.`); }
+                break;
+            }
+        }
+
+        console.log('---------------9 UZDUOTIS------------------');
+        for (let i = 0; i < masyvas.length; i++) {
+             masyvas.splice(i, 1) 
+        }
+        console.log(masyvas);
+
+    </script>
+
+
+
+</body>
+
+</html>

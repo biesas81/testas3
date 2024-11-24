@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daugiamaciai masyvai</title>
+</head>
+
+<body>
+    <script>
+
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        const masyvas = [];
+        for (let i = 0; i < 10; i++) {
+            const vidinismasyvas = [];
+            for (let y = 0; y < 5; y++) {
+                vidinismasyvas[y] = random(5, 25);
+            }
+            masyvas[i] = vidinismasyvas;
+        }
+        console.log(masyvas);
+
+        console.log('---------------1 UZDUOTIS------------------');
+
+        let skaicius = 0;
+        for (let i = 0; i < masyvas.length; i++) {
+            for (let y = 0; y < masyvas[i].length; y++) {
+                if (masyvas[i][y] > 10) { skaicius++; }
+            }
+        }
+        console.log(`Didesni nei 10 yra ${skaicius} elementai.`);
+
+
+        console.log('---------------2 UZDUOTIS------------------');
+        let max = 0;
+        let j = 0;
+        for (let i = 0; i < masyvas.length; i++) {
+            for (let y = 0; y < masyvas[i].length; y++) {
+                if (j === 0) {
+                    max = masyvas[i][y]; j++;
+                }
+                else if (masyvas[i][y] > max) {
+                    max = masyvas[i][y];
+                }
+            }
+        }
+
+        console.log(`Didžiausia reikšmė yra ${max}.`);
+
+        console.log('---------------3 UZDUOTIS------------------');
+        
+        for (let j = 0; j < 5; j++) {
+            let suma = 0;
+            for (let i = 0; i < masyvas.length; i++) {
+                for (let y = 0; y < masyvas[i].length; y++) {
+                    if (y === j) {
+                        suma += masyvas[i][y];
+                    }
+                }
+            }
+            console.log(`Elementų su indeksu ${j} suma yra ${suma}.`);
+        }
+        console.log('---------------4 UZDUOTIS------------------');
+
+        for (let i = 0; i < masyvas.length; i++) {
+            for (let y = 5; y < 7; y++) {
+                masyvas[i][y] = random(5, 25);
+            }
+        }
+
+        console.log(masyvas);
+
+
+        console.log('---------------5 UZDUOTIS------------------');
+
+        const sumumasyvas = [];
+        for (let i = 0; i < masyvas.length; i++) {
+            let suma = 0;
+            for (let y = 0; y < masyvas[i].length; y++) {
+                suma += masyvas[i][y];
+            }
+            sumumasyvas[i] = suma;
+        }
+        console.log(sumumasyvas);
+
+
+
+    </script>
+
+
+</body>
+
+</html>
