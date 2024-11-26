@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taimeris</title>
+</head>
+
+<body>
+
+    <div class="result"></div>
+    <script>
+
+        let sekundes = 5;
+        let minutes = 1;
+        let valandos = 2;
+        document.querySelector('.result').innerHTML = `<h1>${valandos}:${minutes}:${sekundes}</h1>`;
+
+        setTimeout(() => {
+            if (valandos !== 0) {
+                valandos--;
+                let treciasIntervalas = setInterval(() => {
+                    valandos--;
+                    if (valandos === 0) {
+                        clearInterval(treciasIntervalas);
+                    }
+                }, 25000);
+            }
+        }, (sekundes * 1000 + minutes * 5000));
+
+        setTimeout(() => {
+            if (minutes !== 0) {
+                minutes--;
+                let antrasIntervalas = setInterval(() => {
+                    minutes--;
+                    if (valandos === 0 && minutes === 0) {
+                        clearInterval(antrasIntervalas);
+                    }
+                    if (valandos !== 0 && minutes === 0) { minutes = 5;  }
+                }, 5000);
+            }
+        }, sekundes * 1000);
+
+        let pirmasIntervalas = setInterval(() => {
+            if (sekundes !== 0) {
+                sekundes--;
+                document.querySelector('.result').innerHTML = `<h1>${valandos}:${minutes}:${sekundes}</h1>`;
+            }
+            if (sekundes === 0 && minutes === 0 && valandos === 0) {
+                clearInterval(pirmasIntervalas);
+                document.querySelector('.result').innerHTML = `<h1>Skaičiavimas baigtas</h1>`;
+            }
+            if (minutes !== 0 || valandos !== 0) {
+                if (sekundes === 0) { sekundes = 5;  }}
+        }, 1000);
+
+
+
+        // setTimeout(() => {
+        //     console.log('Suveikė')
+        // }, 5000);
+
+        // let skaiciuotuvas = 0;
+
+        // // setInterval() - kartoja veiksmą, kas nurodytą laiko tarpą
+        // let pirmasIntervalas = setInterval(() => {
+        //     console.log('Tiksi kas sekundę', skaiciuotuvas);
+        //     skaiciuotuvas++;
+
+        //     if (skaiciuotuvas > 5) {
+        //         clearInterval(pirmasIntervalas);
+        //     }
+        // }, 1000);
+
+        // let antrasIntervalas = setInterval(() => {
+        //     console.log('Tiksi kas tris sekundes');
+        // }, 3000);
+
+        // // clearInterval() - sunaikiną intervalą
+        // clearInterval(antrasIntervalas);
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

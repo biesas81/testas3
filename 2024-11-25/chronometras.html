@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chronometras</title>
+</head>
+
+<body>
+
+
+    <div class="result"></div>
+    <script>
+        let simtosios = 0;
+        let sekundes = 0;
+        let minutes = 0;
+       
+        let pirmasIntervalas = setInterval(() => {
+                simtosios++;
+                document.querySelector('.result').innerHTML = `<h1>${minutes}:${sekundes}.${simtosios}</h1>`;
+           
+            if (simtosios === 100) {
+                simtosios = 0;
+                sekundes++;
+            }
+            if (sekundes === 5) {
+                sekundes= 0;
+                minutes++;
+            }
+
+            if (minutes === 10) {
+                clearInterval(pirmasIntervalas);
+                document.querySelector('.result').innerHTML = `<h1>Baigėsi 10 minučių</h1>`;
+            }
+
+        }, 10);
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
