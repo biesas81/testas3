@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teleloto</title>
+
+    <style>
+        .conteiner {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: antiquewhite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .kamuoliukai {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .kamuoliukas {
+            width: 50px;
+            height: 50px;
+            border-radius: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .black {
+            background-color: black;
+            color: white;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .red {
+            background-color: red;
+            color: white;
+        }
+
+        .blue {
+            background-color: blue;
+            color: white;
+        }
+
+        .green {
+            background-color: green;
+            color: white;
+        }
+
+        button {
+            font-weight: bold;
+            font-size: 25px;
+            margin: 50px;
+            padding: 20px;
+        }
+
+        .auksinis {
+            font-size: 50px;
+            font-weight: bold;
+            color: red;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="conteiner">
+        <button class="pliusvienas" onclick="ridenti(event)">Ridenti kamuoliuką</button>
+        <div class="kamuoliukai"></div>
+
+    </div>
+
+
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        let auksinis = random(1, 100);
+        
+        const skaiciai = [];
+        let skambutis = false;
+
+        function ridenti(e) {
+
+            if (!skambutis) {
+                let pasikartojantis = false;
+                let metimas;
+                while (!pasikartojantis) {
+                    metimas = random(1, 100);
+                    pasikartojantis = true;
+                    for (let i = 0; i < skaiciai.length; i++)
+                        if (metimas === skaiciai[i]) { pasikartojantis = false; break; }
+                }
+                skaiciai.push(metimas);
+                console.log(auksinis);
+                console.log(metimas);
+                console.log(skaiciai);
+
+                if (metimas === auksinis) {
+                    skambutis = true
+                    const element = document.querySelector('.kamuoliukai')
+                    if (metimas > 0 && metimas < 20) { element.innerHTML += `<div class="kamuoliukas black">${metimas}</div>`; }
+                    if (metimas >= 20 && metimas < 40) { element.innerHTML += `<div class="kamuoliukas yellow">${metimas}</div>`; }
+                    if (metimas >= 40 && metimas < 60) { element.innerHTML += `<div class="kamuoliukas red">${metimas}</div>`; }
+                    if (metimas >= 60 && metimas < 80) { element.innerHTML += `<div class="kamuoliukas blue">${metimas}</div>`; }
+                    if (metimas >= 80 && metimas <= 100) { element.innerHTML += `<div class="kamuoliukas green">${metimas}</div>`; }
+                    document.querySelector('.conteiner').innerHTML += `<div class="auksinis">SKAMBUTIS !!!</div>`;
+
+                } else {
+
+                    const element = document.querySelector('.kamuoliukai')
+                    if (metimas > 0 && metimas < 20) { element.innerHTML += `<div class="kamuoliukas black">${metimas}</div>`; }
+                    if (metimas >= 20 && metimas < 40) { element.innerHTML += `<div class="kamuoliukas yellow">${metimas}</div>`; }
+                    if (metimas >= 40 && metimas < 60) { element.innerHTML += `<div class="kamuoliukas red">${metimas}</div>`; }
+                    if (metimas >= 60 && metimas < 80) { element.innerHTML += `<div class="kamuoliukas blue">${metimas}</div>`; }
+                    if (metimas >= 80 && metimas <= 100) { element.innerHTML += `<div class="kamuoliukas green">${metimas}</div>`; }
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

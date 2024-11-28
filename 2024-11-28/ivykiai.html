@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .kvadratas {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <!-- Sukurkite mygtuką kuriame įrašykite spalvos pavadinimą, o ant jo paspaudus, puslapio fono spalva pasikeistų į tokią kurią jame parašėte. -->
+    <button class="raudonas-fonas">Raudonas fonas</button>
+
+    <!-- Sukurkite mygtuką kuriame įrašykite skaičių 1. Paspaudus ant mygtuko, šis skaičius turėtų padidėti +1. -->
+
+    <button class="pliusvienas" onclick="getNumber(event)">1</button>
+
+    <!-- Sukurkite div elementą kurį atvaizduokite puslapyje kaip kvadratą absoliučioje padėtyje. Paspaudus ant kvadrato šis turėtų atsidurti atsitiktinėje pozicijoje. -->
+    <div class="kvadratas" onclick="changeposition(event)">Pagauk mane</div>
+
+
+    <script>
+   function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+
+
+        document.querySelector('.raudonas-fonas').addEventListener('click', () => {
+            document.querySelector('body').style.backgroundColor = 'red';
+        });
+
+        // console.log(document.querySelector('span').innerText);
+        console.log(document.querySelector('.pliusvienas').textContent);
+
+        function getNumber(e) {
+            let value = parseInt(document.querySelector('.pliusvienas').textContent);
+
+            // console.log(value +  +e.target.textContent); prideda skaiciu esanti
+
+            document.querySelector('.pliusvienas').textContent = value + 1
+        }
+
+
+        function changeposition(e) {
+            const element = document.querySelector('.kvadratas');
+            
+            element.style.marginTop = `${random(0,500)}px`;
+            element.style.marginLeft = `${random(0,500)}px`;
+
+        }
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
