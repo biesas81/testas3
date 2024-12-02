@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Of GamesDocument</title>
+
+    <style>
+        .kvadratas {
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            position: absolute;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="top">
+        <button onclick="pradeti(event)">Pradėti žaidimą</button>
+        <div>
+            <div class="laikas"></div>
+            <div class="Raundoeiga"></div>
+            <div class="Raundorezultatas"></div>
+
+        </div>
+        <div class="zaidimas"></div>
+        <div class="kvadratas" onclick="pagauk(event)">Pagauk mane</div>
+
+
+        <script>
+            function random(min, max) {
+                const minCeiled = Math.ceil(min);
+                const maxFloored = Math.floor(max);
+                return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+            }
+
+          
+                let player = 0;
+                let kompiuteris = 0;
+                let roundas = 0;
+                let seconds = 0;
+                let galutinis = 0;
+                let finaliniszaidejas = 0;
+                let pirmas = false;
+
+
+                let intervalas = setInterval(() => {
+                    document.querySelector('.kvadratas').style.backgroundColor = `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`
+
+                    if (seconds === 0) {
+                        if (roundas === 10) { clearInterval(intervalas) }
+                        roundas++;
+                        console.log(roundas);
+
+                        if (player > kompiuteris - player) {
+                            document.querySelector('.Raundorezultatas').innerHTML = `Raundas: ${roundas}, Laimėjo žaidėjas: ${player}, kompiuteris: ${kompiuteris - player}`;
+                        }
+                        else if (player < kompiuteris - player) { document.querySelector('.Raundorezultatas').innerHTML = `Raundas: ${roundas},  žaidėjas: ${player}, Laimėjo kompiuteris: ${kompiuteris - player}`; }
+                        else { document.querySelector('.Raundorezultatas').innerHTML = `Raundas: ${roundas},  žaidėjas: ${player}, kompiuteris: ${kompiuteris - player} Lygiosios`; }
+
+                        seconds = 9;
+                        console.log(player, kompiuteris);
+                        player = 0;
+                        kompiuteris = 0;
+
+                    } else { seconds-- }
+
+
+                    document.querySelector('.laikas').innerHTML = `
+                    ${seconds.toString().length === 1 ? "0" + seconds : seconds}
+                `;
+
+                    const element = document.querySelector('.kvadratas');
+                    element.style.top = `${random(0, window.innerHeight - 50)}px`;
+                    element.style.left = `${random(0, window.innerWidth - 50)}px`;
+
+                    document.querySelector('.Raundoeiga').innerHTML = `Raundas: ${roundas}, žaidėjas: ${player}, kompiuteris: ${kompiuteris - player}`;
+                    kompiuteris++;
+                    let pirmas = true;
+
+
+                }, 1000);
+
+                function pagauk(event) {
+                        player++;
+                    }
+
+
+
+        </script>
+
+
+
+
+
+
+
+
+
+        </script>
+
+
+
+</body>
+
+</html>

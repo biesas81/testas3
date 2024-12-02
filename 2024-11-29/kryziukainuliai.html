@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        ul {
+            background-color: #fafafa;
+            width: 600px;
+            height: 600px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        li {
+            font-size: 60px;
+            line-height: 60px;
+            height: 200px;
+            font-weight: bold;
+            color: #3a4d8f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #3a4d8f;
+        }
+
+        .reset {
+            margin: 20px auto;
+            max-width: 400px;
+            color: #3a4d8f;
+            background-color: bisque;
+            font-size: 30px;
+            font-weight: bold;
+            margin: 10px auto;
+            text-align: center;
+            border: 1px solid #3a4d8f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reset" onclick="naujasZaidimas(event)">Pradėti iš naujo</div>
+    <ul>
+        <li class="li" onclick="clickEvent(0)"></li>
+        <li class="li" onclick="clickEvent(1)"></li>
+        <li class="li" onclick="clickEvent(2)"></li>
+        <li class="li" onclick="clickEvent(3)"></li>
+        <li class="li" onclick="clickEvent(4)"></li>
+        <li class="li" onclick="clickEvent(5)"></li>
+        <li class="li" onclick="clickEvent(6)"></li>
+        <li class="li" onclick="clickEvent(7)"></li>
+        <li class="li" onclick="clickEvent(8)"></li>
+    </ul>
+
+
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+
+
+        // const data = Array(9).fill('');
+        const data = [];
+
+        let i = 0;
+        let clickCount = 0;
+        let gameActive = true;
+
+        const winningPos = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+
+        function clickEvent(e) {
+            // if (!gameActive) {
+            //     console.log('zaidimas baigtas');
+            //     return;
+            // }
+
+            if (clickCount >= 10) {
+                console.log(clickCount);
+                console.log('zaidimas baigtas paspaudimai baigesi');
+                return;
+            }
+
+            const cell = document.querySelectorAll('li')[e]
+
+            if (cell.innerHTML !== '') {
+                console.log('sis langelis jau uzimtas');
+                return;
+            }
+
+
+            if (i % 2 === 0) {
+                data[e] = 'X';
+                cell.innerHTML = 'X';
+                i++;
+            } else {
+                data[e] = 'O';
+                cell.innerHTML = 'O';
+                i++;
+            }
+            console.log(data);
+            clickCount++;
+
+
+
+        //     for (const pos of winningPos) {
+        //     if ( data[pos[0]] &&
+        //         data[pos[0]] === data[pos[1]] &&
+        //         data[pos[1]] === data[pos[2]]
+        //     ) {
+        //         return data[pos[0]];
+        //         console.log('Laimėtojas yra: ' + data[pos[0]]);
+        //         gameActive = false;
+        //     }else return null;
+        // }
+
+
+        }
+
+        function naujasZaidimas(e) {
+            i = 0;
+            clickCount = 0;
+            data.length = 0;
+            document.querySelectorAll('li').forEach(cell => { cell.innerHTML = '' })
+            console.log("zaidimas pradetas is naujo");
+            
+
+        }
+
+
+        // const winningPos = [
+        //     [0, 1, 2],
+        //     [3, 4, 5],
+        //     [6, 7, 8],
+        //     [0, 3, 6],
+        //     [1, 4, 7],
+        //     [2, 5, 8],
+        //     [0, 4, 8],
+        //     [2, 4, 6]
+        // ];
+
+        // for (const pos of winningPos) {
+        //     if (
+        //         data[pos[0]] === data[pos[1]] &&
+        //         data[pos[1]] === data[pos[2]]
+        //     ) {
+        //         console.log('Laimėtojas yra: ' + data[pos[0]]);
+        //         break;
+        //     }
+        // }
+
+
+
+
+    </script>
+</body>
+
+</html>
