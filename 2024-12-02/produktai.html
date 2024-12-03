@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        i {
+            color: white;
+
+        }
+
+        .ivedimaskiekio {
+            width: 100px;
+        }
+
+        p {
+            margin: 0;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="py-5 container">
+        <div class="d-flex">
+            <input type="text" placeholder="Įveskite produktą" class="ivedimas form-control" />
+            <input type="number" placeholder="Kiekis" class="ivedimaskiekio form-control" />
+            <button onclick="prideti(event)" class="btn btn-primary">Pridėti</button>
+        </div>
+        <ul class="my-3 produktai list-group">
+            <li class="list-group-item d-flex justify-content-between">
+                <p></p>
+                <button class="btn btn-primary btn-sm" onclick="trinti(1)"><i class="bi bi-trash"></i></button>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+                <p></p>
+                <button class="btn btn-primary btn-sm" onclick="trinti(2)"><i class="bi bi-trash"></i></button>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+                <p></p>
+                <button class="btn btn-primary btn-sm" onclick="trinti(3)"><i class="bi bi-trash"></i></button>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+                <p></p>
+                <button class="btn btn-primary btn-sm" onclick="trinti(4)"><i class="bi bi-trash"></i></button>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+                <p></p>
+                <button class="btn btn-primary btn-sm" onclick="trinti(5)"><i class="bi bi-trash"></i></button>
+            </li>
+
+        </ul>
+
+        <!-- <i class="bi bi-trash"></i> -->
+
+    </div>
+
+    <script>
+
+        function prideti(e) {
+           
+            const produktas = document.querySelector('.ivedimas').value;
+            const kiekis = document.querySelector('.ivedimaskiekio').value;
+            const tuscia = true
+            const element = document.querySelectorAll('p').forEach(el => {
+                if (tuscia && el.textContent === '') {
+                    el.innerHTML = `${produktas} ${kiekis} vnt`;
+                    document.querySelector('.ivedimas').value = '';
+                    document.querySelector('.ivedimaskiekio').value = '';
+                    tuscia = false;
+                }
+            })
+        }
+
+        function trinti(kurieilute) {
+            let i = 1;
+            const element = document.querySelectorAll('p').forEach(el => {
+                if (kurieilute === i) {
+                    el.innerHTML = '';
+                   
+                }
+                i++;
+            })
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
