@@ -61,23 +61,25 @@
                 <div class="krepselis">
                     <div>
                         <h1>Shopping Cart</h1>
-                        <p>??? items</p>
+                        <p class="prekiukiekis"></p>
                     </div>
-                    <div class="result"></div>
+                    <table class="result table"></table>
                     <button class="" onclick="goToShop(event)"><i class="bi bi-arrow-left"></i>Back to shop</button>
                 </div>
                 <div class="mokejimas">
                     <h3>Summary</h3>
+                    <div>
+                        <p class="prekiukiekis"></p>
+                        <p class="suma"></p>
+
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-
-
     <script src="produktai.js"></script>
-    <!-- <script src="skriptas.js"></script> -->
 
     <script>
 
@@ -153,26 +155,34 @@
                 <tr>
                     <td class= "foto">
                         <div class= "backround"> 
-                            <img src="${pirkiniai.thumbnail}" alt="" style="max-width: 70px;">
+                            <img src="${row.thumbnail}" alt="" style="max-width: 70px;">
                         </div>
+                    </td>
                     <td> 
-                        <div class="text-primary">${pirkiniai.category}</div>
-                        <div>${pirkiniai.title}</div>
+                        <div class="text-primary">${row.category}</div>
+                        <div>${row.title}</div>
+                    </td>
                     <td>
                         <div> 
                             <input type="number" placeholder="Kiekis"/>
                         </div>
                     </td>
                     <td>
-
-                        <div>$${(pirkiniai.price * (100 - pirkiniai.discountPercentage) / 100).toFixed(2)}</div>
-                       
-                        <div><i class="bi bi-x-square"></i></div>
+                        <div>$${(row.price * (100 - row.discountPercentage) / 100).toFixed(2)}</div>
+                    </td>
+                    <td>
+                        <div onclick="deleteItem(event, ${index})" ><i class="bi bi-x-square"></i></div>
                     </td>
                 </tr>
             `).join('');
         }
 
+        function deleteItem(e, idx) {
+            console.log('veikia');
+            e.preventDefault();
+            pirkiniai.splice(idx, 1);
+            renderData();
+        }
 
 
 
