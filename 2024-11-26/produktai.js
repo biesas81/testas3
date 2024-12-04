@@ -97,7 +97,7 @@
         title: "Dior J'adore"
       },
       {
-        brand: 'Dolce &amp; Gabbana',
+        brand: 'Dolce and Gabbana',
         category: 'fragrances',
         description: "Dolce Shine by Dolce &amp; Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It's a joyful and youthful scent.",
         discountPercentage: 11.47,

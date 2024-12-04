@@ -15,7 +15,6 @@
 
         i {
             color: white;
-
         }
 
         .ivedimaskiekio {
@@ -25,6 +24,7 @@
         p {
             margin: 0;
         }
+
     </style>
 
 
@@ -38,30 +38,29 @@
             <button onclick="prideti(event)" class="btn btn-primary">Pridėti</button>
         </div>
         <ul class="my-3 produktai list-group">
-            <li class="list-group-item d-flex justify-content-between">
+            <li class="list-group-item d-none justify-content-between">
                 <p></p>
                 <button class="btn btn-primary btn-sm" onclick="trinti(1)"><i class="bi bi-trash"></i></button>
             </li>
-            <li class="list-group-item d-flex justify-content-between">
+            <li class="list-group-item d-none justify-content-between">
                 <p></p>
                 <button class="btn btn-primary btn-sm" onclick="trinti(2)"><i class="bi bi-trash"></i></button>
             </li>
-            <li class="list-group-item d-flex justify-content-between">
+            <li class="list-group-item d-none justify-content-between">
                 <p></p>
                 <button class="btn btn-primary btn-sm" onclick="trinti(3)"><i class="bi bi-trash"></i></button>
             </li>
-            <li class="list-group-item d-flex justify-content-between">
+            <li class="list-group-item d-none justify-content-between">
                 <p></p>
                 <button class="btn btn-primary btn-sm" onclick="trinti(4)"><i class="bi bi-trash"></i></button>
             </li>
-            <li class="list-group-item d-flex justify-content-between">
+            <li class="list-group-item d-none justify-content-between">
                 <p></p>
                 <button class="btn btn-primary btn-sm" onclick="trinti(5)"><i class="bi bi-trash"></i></button>
             </li>
 
         </ul>
 
-        <!-- <i class="bi bi-trash"></i> -->
 
     </div>
 
@@ -71,10 +70,13 @@
            
             const produktas = document.querySelector('.ivedimas').value;
             const kiekis = document.querySelector('.ivedimaskiekio').value;
-            const tuscia = true
+            let tuscia = true;
             const element = document.querySelectorAll('p').forEach(el => {
+                
                 if (tuscia && el.textContent === '') {
                     el.innerHTML = `${produktas} ${kiekis} vnt`;
+                    el.parentElement.classList.remove('d-none');
+                    el.parentElement.classList.add('d-flex');
                     document.querySelector('.ivedimas').value = '';
                     document.querySelector('.ivedimaskiekio').value = '';
                     tuscia = false;
@@ -87,6 +89,8 @@
             const element = document.querySelectorAll('p').forEach(el => {
                 if (kurieilute === i) {
                     el.innerHTML = '';
+                    el.parentElement.classList.remove('d-flex');
+                    el.parentElement.classList.add('d-none');
                    
                 }
                 i++;
