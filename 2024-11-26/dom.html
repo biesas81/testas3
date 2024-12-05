@@ -50,6 +50,8 @@
         .xxx {
             display: none;
         }
+
+   
     </style>
 </head>
 
@@ -136,9 +138,24 @@
         const result = document.querySelector('.result');
 
         function goToChart(e, index) {
+            let productCount = 1;
             e.preventDefault();
-            pirkiniai.push(products[index]);
-            console.log(pirkiniai);
+            if (pirkiniai.length === 0) {
+                pirkiniai.push(products[index]);
+            } else {
+                for (i = 0; i < pirkiniai.length; i++) {
+                    if (products[index] === pirkiniai[i]) {
+                        productCount++;
+                    } else {
+                        pirkiniai.push(products[index]);
+                    }
+                }
+            }
+
+            console.log(productCount);
+
+            // pirkiniai.push(products[index]);
+            // console.log(pirkiniai);
             renderData();
             document.querySelector('.shop').style.display = 'none';
             document.querySelector('.xxx').style.display = 'block';
@@ -164,7 +181,7 @@
                     </td>
                     <td>
                         <div> 
-                            <input type="number" placeholder="Kiekis"/>
+                            <input type="number" value="1" placeholder="Kiekis"/>
                         </div>
                     </td>
                     <td>
