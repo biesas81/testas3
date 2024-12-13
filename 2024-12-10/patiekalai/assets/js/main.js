@@ -23,6 +23,7 @@ function getMeal(e) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input.value}`)
         .then(resp => resp.json())
         .then(resp => {
+            console.log(resp);
             if (!resp.meals)
                 return;
 
@@ -75,6 +76,7 @@ function goToReceipt(e, id) {
                     <strong>Youtube: </strong>
                     <a href="${value.strYoutube}">${value.strYoutube}</a>
                 </div>
+        </div>
         </div>
     `);
         });
