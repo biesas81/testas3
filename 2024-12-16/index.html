@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klases</title>
+</head>
+<body>
+    
+<script>
+
+class Televizorius {
+    constructor(gamintojas) {
+        this.gamintojas = gamintojas;
+        this.kanalas = 1;
+        this.garsas = 50;
+        this.maxKanalu = 50;
+    }
+
+    padidintiGarsa() {
+        if (this.garsas < 100) {
+            this.garsas++;
+        }
+    }
+
+    sumazintiGarsa() {
+        if (this.garsas > 0) {
+            this.garsas--;
+        }
+    }
+    
+    keistiKanala(naujasKanalas) {
+        if (naujasKanalas > 0 && naujasKanalas <= this.maxKanalu) {
+            this.kanalas = naujasKanalas;
+        } else {
+            this.kanalas = 1; 
+        }
+    }
+
+    atstatytiParametrus() {
+        this.kanalas = 1;
+        this.garsas = 50;
+    }
+    
+    dabartineBusena() {
+        return `Televizorius '${this.gamintojas}' šiuo metu rodo ${this.kanalas} kanalą. Garso lygis ${this.garsas}.`;
+    }
+}
+
+
+let manoTelevizorius = new Televizorius("Sony");
+
+console.log(manoTelevizorius.dabartineBusena());
+manoTelevizorius.padidintiGarsa();
+manoTelevizorius.keistiKanala(8);
+manoTelevizorius.keistiKanala(55);
+manoTelevizorius.atstatytiParametrus();
+manoTelevizorius.padidintiGarsa();
+manoTelevizorius.padidintiGarsa();
+manoTelevizorius.padidintiGarsa();
+manoTelevizorius.padidintiGarsa();
+manoTelevizorius.padidintiGarsa();
+manoTelevizorius.keistiKanala(15);
+console.log(manoTelevizorius.dabartineBusena());
+
+
+</script>
+
+
+</body>
+</html>
