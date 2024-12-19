@@ -1,0 +1,15 @@
+header {
+    background-color: aqua;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 20px;
+}
+
+nav ul {
+    list-style: none;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
