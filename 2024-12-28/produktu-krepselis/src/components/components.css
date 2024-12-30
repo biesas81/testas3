@@ -1,0 +1,43 @@
+
+.rating {
+    position: relative;
+    width: fit-content;
+}
+.rating .active {
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    
+}
+
+.rating .wrapper {
+    width: max-content;
+   
+}
+
+.foto {
+    position: relative;
+}
+
+.nuolaida {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.nuolaida {
+    width: 80px;
+}
+
+.background img {
+    max-width: 200px;
+}
+
+.main {
+min-height: 100vh;
+
+}
+
+.photo img {
+max-width: 70px;
+
+}
