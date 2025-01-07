@@ -95,6 +95,9 @@ Aplikacijos struktūra:
             KomponentoPavadinimas.css - Komponento stilius (esant poreikiui)
 
 
+route:
+
+npm i react-router-dom
 
 
 
