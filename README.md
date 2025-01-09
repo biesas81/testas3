@@ -97,7 +97,15 @@ Aplikacijos struktūra:
 
 route:
 
-npm i react-router-dom
+npm i react-router-dom  - nuorodos
+
+npm init -y
+npm install express - serverio kurimas
+npm install -g nodemon
+
+npm run dev
+
+postman.com - testavimui
 
 
 
