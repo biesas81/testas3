@@ -102,6 +102,7 @@ npm i react-router-dom  - nuorodos
 npm init -y
 npm install express - serverio kurimas
 npm install -g nodemon
+npm install mangoose
 
 npm run dev
 
