@@ -102,13 +102,13 @@ npm i react-router-dom  - nuorodos
 npm init -y
 npm install express - serverio kurimas
 npm install -g nodemon
-npm install mangoose
+npm install mongoose
 
 npm run dev
 
 postman.com - testavimui
 
-
+npm install axios - fetchinimui is serverio
 
 
 
